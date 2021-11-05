@@ -7,7 +7,6 @@ public abstract class Car {
     protected Color color; // Color of the car
     protected String modelName; // The car model name
 
-
     public int getNrDoors(){
         return nrDoors;
     }
@@ -38,15 +37,15 @@ public abstract class Car {
         currentSpeed = 0;
     }
 
-    public double speedFactor() {
+    protected double speedFactor() {
         return 0;
     }
 
-    public void incrementSpeed(double amount){
+    protected void incrementSpeed(double amount){
 
     }
 
-    public void decrementSpeed(double amount){
+    protected void decrementSpeed(double amount){
 
     }
 
