@@ -2,6 +2,7 @@ import java.awt.*;
 
 public abstract class Car implements Moveable{
     public Position2D position = new Position2D(0,0);
+    public MovementVector2D direction = new MovementVector2D(0,0);
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -61,6 +62,8 @@ public abstract class Car implements Moveable{
     }
 
     public void move(){
+        position.setxPos(position.getxPos()+direction.xDirection * currentSpeed);
+        position.setyPos(position.getyPos()+direction.yDirection * currentSpeed);
 
     }
 
