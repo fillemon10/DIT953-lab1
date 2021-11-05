@@ -1,6 +1,7 @@
 import java.awt.*;
 
 public abstract class Car implements Moveable{
+    public Position2D position = new Position2D(0,0);
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
