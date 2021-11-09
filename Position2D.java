@@ -5,16 +5,16 @@ public class Position2D {
         this.xPos = x;
         this.yPos = y;
     }
-    public double getxPos(){
+    public double getXPos(){
         return xPos;
     }
-    public double getyPos(){
+    public double getYPos(){
         return yPos;
     }
-    public void setxPos(double newxPos){
+    public void setXPos(double newxPos){
         xPos = newxPos;
     }
-    public void setyPos(double newyPos){
+    public void setYPos(double newyPos){
         xPos = newyPos;
     }
 }

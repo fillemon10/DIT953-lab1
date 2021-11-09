@@ -1,8 +1,12 @@
 import java.awt.*;
+import static java.lang.Math.PI;
 
 public abstract class Car implements Moveable{
-    public Position2D position = new Position2D(0,0);
-    public MovementVector2D direction = new MovementVector2D(0,0);
+    private static final double turnAngle = PI/12;
+
+    private Position2D position = new Position2D(0,0);
+    private MovementVector2D direction = new MovementVector2D();
+
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
@@ -62,16 +66,16 @@ public abstract class Car implements Moveable{
     }
 
     public void move(){
-        position.setxPos(position.getxPos()+direction.xDirection * currentSpeed);
-        position.setyPos(position.getyPos()+direction.yDirection * currentSpeed);
-
+        position.setXPos(position.getXPos()+direction.getxDirection() * currentSpeed);
+        position.setYPos(position.getYPos()+direction.getyDirection() * currentSpeed);
     }
 
     public void turnRight(){
-
+        direction.updateDirection(direction.getAngle() - turnAngle);
     }
 
     public void turnLeft(){
+        direction.updateDirection(direction.getAngle() + turnAngle);
 
     }
 }
