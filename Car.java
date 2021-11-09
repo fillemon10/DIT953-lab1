@@ -1,7 +1,7 @@
 import java.awt.*;
 import static java.lang.Math.PI;
 
-public abstract class Car implements Moveable{
+public abstract class Car implements Movable {
     private static final double turnAngle = PI/12;
 
     private Position2D position = new Position2D(0,0);
@@ -12,6 +12,13 @@ public abstract class Car implements Moveable{
     protected double currentSpeed; // The current speed of the car
     protected Color color; // Color of the car
     protected String modelName; // The car model name
+
+    public Car(int nrDoors, double enginePower, Color color, String modelName) {
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = color;
+        this.modelName = modelName;
+    }
 
     public int getNrDoors(){
         return nrDoors;
@@ -47,12 +54,12 @@ public abstract class Car implements Moveable{
         return 0;
     }
 
-    protected void incrementSpeed(double amount){
-
+    public void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
     }
 
-    protected void decrementSpeed(double amount){
-
+    public void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
 
         // TODO fix this method according to lab pm
