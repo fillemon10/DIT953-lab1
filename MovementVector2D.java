@@ -12,6 +12,7 @@ public class MovementVector2D {
     }
 
     public void updateDirection(double newAngle){
+        angle = newAngle;
         yDirection = Math.sin(newAngle);
         xDirection = Math.cos(newAngle);
     }

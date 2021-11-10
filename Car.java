@@ -1,8 +1,11 @@
+import org.junit.Test;
+
 import java.awt.*;
 import static java.lang.Math.PI;
+import static org.junit.Assert.*;
 
 public abstract class Car implements Movable {
-    private static final double turnAngle = PI/12;
+    private static final double turnAngle = PI/2;
 
     private Position2D position = new Position2D(0,0);
     private MovementVector2D direction = new MovementVector2D();
@@ -38,6 +41,8 @@ public abstract class Car implements Movable {
 
     public String getModelName(){ return modelName; }
 
+    public MovementVector2D getDirection(){ return direction; }
+
     public void setColor(Color clr){
         color = clr;
     }
@@ -72,6 +77,7 @@ public abstract class Car implements Movable {
         decrementSpeed(amount);
     }
 
+    @Test
     public void move(){
         position.setXPos(position.getXPos()+direction.getxDirection() * currentSpeed);
         position.setYPos(position.getYPos()+direction.getyDirection() * currentSpeed);
