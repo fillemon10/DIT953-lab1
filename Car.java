@@ -6,7 +6,7 @@ public abstract class Car implements Movable {
 
     private Vector2D position = new Vector2D(0,0);
     private Vector2D direction = new Vector2D();
-
+//change
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
