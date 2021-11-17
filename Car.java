@@ -1,14 +1,11 @@
-import org.junit.Test;
-
 import java.awt.*;
 import static java.lang.Math.PI;
-import static org.junit.Assert.*;
 
 public abstract class Car implements Movable {
     private static final double turnAngle = PI/2;
 
-    private Position2D position = new Position2D(0,0);
-    private MovementVector2D direction = new MovementVector2D();
+    private Vector2D position = new Vector2D(0,0);
+    private Vector2D direction = new Vector2D();
 
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
@@ -41,12 +38,12 @@ public abstract class Car implements Movable {
 
     public String getModelName(){ return modelName; }
 
-    public MovementVector2D getDirection(){ return direction; }
+    public Vector2D getDirection(){ return direction; }
 
+    public Vector2D getPosition(){return position; }
     public void setColor(Color clr){
         color = clr;
     }
-
     public void startEngine(){
         currentSpeed = 0.1;
     }
@@ -54,7 +51,6 @@ public abstract class Car implements Movable {
     public void stopEngine(){
         currentSpeed = 0;
     }
-
     protected double speedFactor() {
         return 0;
     }
@@ -62,25 +58,30 @@ public abstract class Car implements Movable {
     public void incrementSpeed(double amount){
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
     }
-
     public void decrementSpeed(double amount){
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
 
         // TODO fix this method according to lab pm
     public void gas(double amount){
+        amount = Math.max(amount,0);
+        amount = Math.min(1,amount);
         incrementSpeed(amount);
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
+        amount = Math.max(amount,0);
+        amount = Math.min(1,amount);
         decrementSpeed(amount);
     }
 
-    @Test
     public void move(){
-        position.setXPos(position.getXPos()+direction.getxDirection() * currentSpeed);
-        position.setYPos(position.getYPos()+direction.getyDirection() * currentSpeed);
+        double x = position.getX()+direction.getX() * currentSpeed;
+        double y = position.getY()+direction.getY() * currentSpeed;
+        //position = new Position2D(x,y);
+        position.setX(x);
+        position.setY(y);
     }
 
     public void turnRight(){
