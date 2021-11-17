@@ -1,5 +1,5 @@
 public interface Movable {
-    public void move();
+    public void move(double maxX, double maxY, double minX, double minY);
     public void turnLeft();
     public void turnRight();
 }

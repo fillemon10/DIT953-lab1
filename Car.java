@@ -2,9 +2,9 @@ import java.awt.*;
 import static java.lang.Math.PI;
 
 public abstract class Car implements Movable {
-    private static final double turnAngle = PI/2;
+    private static final double turnAngle = PI/6;
 
-    private Vector2D position = new Vector2D(0,0);
+    private Vector2D position = new Vector2D(100,100);
     private Vector2D direction = new Vector2D();
 //change
     protected int nrDoors; // Number of doors on the car
@@ -76,9 +76,9 @@ public abstract class Car implements Movable {
         decrementSpeed(amount);
     }
 
-    public void move(){
-        double x = position.getX()+direction.getX() * currentSpeed;
-        double y = position.getY()+direction.getY() * currentSpeed;
+    public void move(double maxX, double maxY, double minX, double minY){
+        double x = Math.max(Math.min(maxX,position.getX()+direction.getX() * currentSpeed * 0.01),minX);
+        double y = Math.max(Math.min(maxY,position.getY()+direction.getY() * currentSpeed * 0.01),minY);
         //position = new Position2D(x,y);
         position.setX(x);
         position.setY(y);

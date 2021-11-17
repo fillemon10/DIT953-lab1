@@ -50,7 +50,7 @@ public class TestCar {
     @Test
     public void testMove(){
         car.gas(2);
-        car.move();
+        //car.move();
         System.out.println("Curr pos: " + car.getPosition().getY() + ", Speed: " + car.getCurrentSpeed() + ", Direction y: " + car.getDirection().getY());
         assertEquals(1.25,car.getPosition().getY());
         car.brake(2);
