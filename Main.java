@@ -23,7 +23,8 @@ public class Main extends Application {
     Car car;
     @Override
     public void init() throws Exception {
-        car = new Saab95();
+        car = new Volvo240();
+        //car = new Saab95();
     }
 
     @Override

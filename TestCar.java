@@ -41,19 +41,23 @@ public class TestCar {
         assertEquals("Saab95",car.getModelName());
     }
     @Test
-    public void testDirection(){
+    public void testVector(){
         car.turnLeft();
-        assertEquals(PI,car.getDirection().getAngle());
+        assertEquals(PI/2+PI/6,car.getDirection().getAngle());
         car.turnRight();
         assertEquals(PI/2,car.getDirection().getAngle());
+        car.getPosition().setX(5);
+        assertEquals(5,car.getPosition().getX());
+        car.getPosition().setY(5);
+        assertEquals(5,car.getPosition().getY());
     }
     @Test
     public void testMove(){
-        car.gas(2);
-        //car.move();
+        car.gas(1);
+        car.move();
         System.out.println("Curr pos: " + car.getPosition().getY() + ", Speed: " + car.getCurrentSpeed() + ", Direction y: " + car.getDirection().getY());
-        assertEquals(1.25,car.getPosition().getY());
-        car.brake(2);
+        assertEquals(100.125,car.getPosition().getY());
+        car.brake(1);
     }
 
 
