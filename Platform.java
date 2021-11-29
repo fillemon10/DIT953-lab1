@@ -9,6 +9,18 @@ public class Platform {
         this.platformIsUp = platformIsUp;
     }
 
+    public void changeAngle(int inAngle){
+        angle = Math.min(Math.max(angle + inAngle, 0), 70);
+    }
+
+    public boolean isRaised() {
+        if(getAngle() != 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public int getAngle(){
         return angle;
     }
