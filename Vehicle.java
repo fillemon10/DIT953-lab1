@@ -1,6 +1,9 @@
 import java.awt.*;
 import static java.lang.Math.PI;
 
+/**
+ * @author A13
+ */
 public abstract class Vehicle implements Movable {
     private static final double turnAngle = PI/6;
 

@@ -2,6 +2,9 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author A13
+ */
 public class TestVolvo240 {
     static Volvo240 volvo240 = new Volvo240();
 

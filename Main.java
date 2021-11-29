@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 
 import static javafx.application.Application.launch;
 
+/**
+ * @author A13
+ */
 public class Main extends Application {
     private static double dTime;
     private static long lastTime;

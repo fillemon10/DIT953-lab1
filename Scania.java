@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * @author A13
+ */
 public class Scania extends Vehicle implements Movable  {
 
     private Platform platform;

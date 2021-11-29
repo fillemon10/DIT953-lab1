@@ -5,6 +5,9 @@ import java.awt.*;
 import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author A13
+ */
 public class TestCar {
     static Vehicle car = new Saab95();
     @Test

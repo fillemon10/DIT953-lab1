@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * @author A13
+ */
 public class Saab95 extends Vehicle {
 
     public boolean turboOn;
