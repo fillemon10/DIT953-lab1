@@ -20,7 +20,7 @@ public class Main extends Application {
 
 
     private GraphicsContext gc;
-    Car car;
+    Vehicle car;
     @Override
     public void init() throws Exception {
         car = new Volvo240();

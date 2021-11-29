@@ -1,11 +1,12 @@
 import org.junit.jupiter.api.Test;
-import static java.lang.Math.PI;
+
 import java.awt.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static java.lang.Math.PI;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCar {
-    static Car car = new Saab95();
+    static Vehicle car = new Saab95();
     @Test
     public void testSpeed() {
         System.out.println(car.getCurrentSpeed());
