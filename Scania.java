@@ -19,22 +19,17 @@ public class Scania extends Vehicle implements Movable  {
         return getEnginePower();
     }
 
-    public boolean isPlatformRaised() {
-        int angle = platform.getAngle();
-        if(angle != 0){
-            return true;
-        } else {
-            return false;
+    @Override
+    public void gas(double amount){
+        if(!platform.isRaised()){
+            amount = Math.max(amount,0);
+            amount = Math.min(1,amount);
+            incrementSpeed(amount);
         }
     }
 
-    public boolean isDrivable(){
-        return !isPlatformRaised();
-    }
-
-    //TODO
-    public void inMotion(){
-        int angle = platform.getAngle();
-
+    public void raisePlatform(int amount){
+        if (getCurrentSpeed() == 0)
+            platform.changeAngle(amount);
     }
 }
