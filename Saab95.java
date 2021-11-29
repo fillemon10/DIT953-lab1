@@ -17,7 +17,8 @@ public class Saab95 extends Vehicle {
     public void setTurboOff(){
         turboOn = false;
     }
-    
+
+    @Override
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;

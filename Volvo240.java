@@ -8,7 +8,8 @@ public class Volvo240 extends Vehicle {
         super(4,100, Color.black,"Volvo240");
         stopEngine();
     }
-    
+
+    @Override
     public double speedFactor(){
         return getEnginePower() * 0.01 * trimFactor;
     }

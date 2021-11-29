@@ -8,7 +8,7 @@ public class TestScania {
     @Test
     public void testTurbo() {
         scania.gas(2);
-        assertEquals(1.25,scania.getCurrentSpeed());
+        assertEquals(2,scania.getCurrentSpeed());
         scania.brake(2);
     }
 }

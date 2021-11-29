@@ -10,6 +10,11 @@ public class Scania extends Vehicle implements Movable  {
         stopEngine();
     }
 
+    @Override
+    public double speedFactor(){
+        return getEnginePower() * 0.01;
+    }
+
     public boolean isPlatformRaised() {
         int angle = platform.getAngle();
         if(angle != 0){
