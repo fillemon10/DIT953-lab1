@@ -3,7 +3,7 @@ import java.awt.*;
 /**
  * @author A13
  */
-public class Scania extends Vehicle implements Movable  {
+public class Truck extends Vehicle implements Movable  {
 
     private Platform platform;
 
@@ -11,7 +11,7 @@ public class Scania extends Vehicle implements Movable  {
      * @param platform
      * @see Vehicle#Vehicle
      */
-    public Scania(Platform platform) {
+    public Truck(Platform platform) {
         super(2, 200, Color.white, "Scania");
         this.platform = platform;
         stopEngine();
