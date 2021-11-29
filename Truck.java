@@ -3,7 +3,7 @@ import java.awt.*;
 /**
  * @author A13
  */
-public class Truck extends Vehicle implements Movable  {
+public abstract class Truck extends Vehicle implements Movable  {
 
     private Platform platform;
 
@@ -11,8 +11,8 @@ public class Truck extends Vehicle implements Movable  {
      * @param platform
      * @see Vehicle#Vehicle
      */
-    public Truck(Platform platform) {
-        super(2, 200, Color.white, "Scania");
+    public Truck(int nrDoors, int enginePower, Color color, String modelName, Platform platform) {
+        super(nrDoors, enginePower, color, modelName);
         this.platform = platform;
         stopEngine();
     }
