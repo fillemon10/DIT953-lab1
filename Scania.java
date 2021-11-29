@@ -4,6 +4,10 @@ public class Scania extends Vehicle implements Movable  {
 
     private Platform platform;
 
+    /**
+     * @param platform
+     * @see Vehicle#Vehicle
+     */
     public Scania(Platform platform) {
         super(2, 200, Color.white, "Scania");
         this.platform = platform;
@@ -12,25 +16,25 @@ public class Scania extends Vehicle implements Movable  {
 
     @Override
     public double speedFactor(){
-        return getEnginePower() * 0.01;
+        return getEnginePower();
     }
 
-    public void raisePlatform(){
-        if (getCurrentSpeed() != 0){
-            platform.changeAngle(2);
+    public boolean isPlatformRaised() {
+        int angle = platform.getAngle();
+        if(angle != 0){
+            return true;
+        } else {
+            return false;
         }
     }
 
-    @Override
-    public void gas(double amount){
-        if (!platform.isRaised()){
-            amount = Math.max(amount,0);
-            amount = Math.min(1,amount);
-            incrementSpeed(amount);
-        }
+    public boolean isDrivable(){
+        return !isPlatformRaised();
     }
 
+    //TODO
+    public void inMotion(){
+        int angle = platform.getAngle();
 
-
-
+    }
 }
