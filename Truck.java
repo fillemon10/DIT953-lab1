@@ -31,6 +31,10 @@ public abstract class Truck extends Vehicle implements Movable  {
         }
     }
 
+    public Platform getPlatform(){
+        return platform;
+    }
+
     public void raisePlatform(int amount){
         if (getCurrentSpeed() == 0)
             platform.changeAngle(amount);

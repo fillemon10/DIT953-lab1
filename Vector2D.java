@@ -31,6 +31,12 @@ public class Vector2D {
         x = Math.cos(newAngle);
     }
 
+    public double getDistance(Vector2D position){
+        double dis = Math.sqrt(Math.pow(Math.abs(this.x - position.getX()),2) +
+                Math.pow(Math.abs(this.y - position.getY()),2));
+        return dis;
+    }
+
     /**
      * @return x
      */

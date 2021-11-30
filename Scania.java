@@ -15,6 +15,7 @@ public class Scania extends Truck implements Movable{
      * @see Vehicle#Vehicle
      */
     public Scania(Platform platform) {
-        super(2,200, Color.white, "Scania", new Platform(0,false));
+        super(2,200, Color.white, "Scania",
+                new Platform(0,false));
     }
 }
