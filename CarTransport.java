@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class carTransport extends Truck implements Movable{
+public class CarTransport extends Truck implements Movable{
 
     private final double PICKUP_RANGE = 5;
     private final int PLATFORM_SIZE = 4;
@@ -11,7 +11,7 @@ public class carTransport extends Truck implements Movable{
      * @param platform
      * @see Vehicle#Vehicle
      */
-    public carTransport(Platform platform) {
+    public CarTransport(Platform platform) {
         super(2,200, Color.white, "Scania",
                 new Platform(0,false));
     }
