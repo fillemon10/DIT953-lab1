@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CarTransport extends Truck implements Movable{
@@ -7,19 +6,24 @@ public class CarTransport extends Truck implements Movable{
     private final double PICKUP_RANGE = 5;
     private final int PLATFORM_SIZE = 4;
     private List<Vehicle> cars;
+
     /**
      * @param platform
-     * @see Vehicle#Vehicle
+     * @see Truck#Truck
      */
     public CarTransport(Platform platform) {
-        super(2,200, Color.white, "Scania",
+        super(2,200, Color.white, "CarTransport",
                 new Platform(0,false));
     }
 
+    /**
+     * @param amount
+     */
     @Override
     public void raisePlatform(int amount) {
         super.raisePlatform(1);
     }
+
     @Override
     public void move(){
         super.move();
@@ -28,9 +32,11 @@ public class CarTransport extends Truck implements Movable{
             car.getPosition().setY(getPosition().getY());
         }
     }
+    
     public void lowerPlatform(){
         super.raisePlatform(-1);
     }
+
     public void loadRamp(Vehicle car){
         if(getPosition().getDistance(car.getPosition()) <= PICKUP_RANGE &&
                 (car instanceof Car) && getPlatform().isRaised() && cars.size() < PLATFORM_SIZE){
