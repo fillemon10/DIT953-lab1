@@ -17,11 +17,17 @@ public abstract class Truck extends Vehicle implements Movable  {
         stopEngine();
     }
 
+    /**
+     * @return enginePower
+     */
     @Override
     public double speedFactor(){
         return getEnginePower();
     }
 
+    /**
+     * @param amount
+     */
     @Override
     public void gas(double amount){
         if(!platform.isRaised()){
@@ -29,10 +35,16 @@ public abstract class Truck extends Vehicle implements Movable  {
         }
     }
 
+    /**
+     * @return platform
+     */
     public Platform getPlatform(){
         return platform;
     }
 
+    /**
+     * @param amount
+     */
     public void raisePlatform(int amount){
         if (getCurrentSpeed() == 0)
             platform.changeAngle(amount);
