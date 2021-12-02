@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Workshop<P extends Vehicle> {
-    private List<P> vehicles;
+    private Carloader<P> carloader = new Carloader<>();
     private int workshopSize;
     private String name;
 
@@ -12,20 +12,15 @@ public class Workshop<P extends Vehicle> {
 
     public void loadCars(List<P> cars){
         for (P car : cars) {
-            if (vehicles.size() < workshopSize){
-                vehicles.add(car);
+            if (carloader.getVehicles().size() < workshopSize){
+                loadCar(car);
             }
         }
     }
     public void loadCar(P car){
-            vehicles.add(car);
+        carloader.loadCar(car);
     }
     public P unloadCar(){
-        if (!vehicles.isEmpty()){
-            return vehicles.remove(vehicles.size()-1);
-        }
-        else {
-            return null;
-        }
+        return carloader.unloadCar();
     }
 }

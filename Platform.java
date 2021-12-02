@@ -21,17 +21,23 @@ public class Platform {
      */
     public void changeAngle(int inAngle){
         angle = Math.min(Math.max(angle + inAngle, 0), 70);
+        if (angle == 0){
+            platformIsUp = false;
+        }
+        else {
+            platformIsUp = true;
+        }
+    }
+
+    public void changPlatformstate(){
+        platformIsUp = !platformIsUp;
     }
 
     /**
      * @return isRaised
      */
     public boolean isRaised() {
-        if(getAngle() != 0){
-            return true;
-        } else {
-            return false;
-        }
+        return platformIsUp;
     }
 
     /**

@@ -25,9 +25,7 @@ public abstract class Truck extends Vehicle implements Movable  {
     @Override
     public void gas(double amount){
         if(!platform.isRaised()){
-            amount = Math.max(amount,0);
-            amount = Math.min(1,amount);
-            incrementSpeed(amount);
+            super.gas(amount);
         }
     }
 
