@@ -138,7 +138,7 @@ public abstract class Vehicle implements Movable {
         double y = Math.max(Math.min(maxY,position.getY()+direction.getY() * currentSpeed * 0.1),minY);
         //position = new Position2D(x,y);
         if (x == maxX || x == minX || y == maxY || y == minY){
-            direction.setAngle(-direction.getAngle());
+            direction.updateDirection(-direction.getAngle());
         }
         position.setX(x);
         position.setY(y);
