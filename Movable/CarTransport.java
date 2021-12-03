@@ -1,6 +1,6 @@
+package Movable;
+
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CarTransport extends Truck implements Movable{
 
@@ -13,7 +13,7 @@ public class CarTransport extends Truck implements Movable{
      * @see Vehicle#Vehicle
      */
     public CarTransport(Platform platform) {
-        super(2,200, Color.white, "Scania",
+        super(2,200, Color.white, "Movable.Scania",
                 new Platform(0,false));
     }
 

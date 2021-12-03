@@ -1,3 +1,5 @@
+package Movable;
+
 import java.util.List;
 
 public class Carloader<P extends Vehicle> {

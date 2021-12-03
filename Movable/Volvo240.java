@@ -1,3 +1,5 @@
+package Movable;
+
 import java.awt.*;
 
 /**
@@ -11,7 +13,7 @@ public class Volvo240 extends Vehicle implements Car {
      * @see Vehicle#Vehicle
      */
     public Volvo240(){
-        super(4,100, Color.black,"Volvo240");
+        super(4,100, Color.black,"Movable.Volvo240");
         stopEngine();
     }
 

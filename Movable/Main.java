@@ -1,3 +1,4 @@
+package Movable;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -27,7 +28,7 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         car = new Volvo240();
-        //car = new Saab95();
+        //car = new Movable.Saab95();
     }
 
     @Override

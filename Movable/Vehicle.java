@@ -1,3 +1,5 @@
+package Movable;
+
 import java.awt.*;
 import static java.lang.Math.PI;
 
@@ -132,9 +134,12 @@ public abstract class Vehicle implements Movable {
      * @param minY
      */
     public void move(double maxX, double maxY, double minX, double minY){
-        double x = Math.max(Math.min(maxX,position.getX()+direction.getX() * currentSpeed * 0.01),minX);
-        double y = Math.max(Math.min(maxY,position.getY()+direction.getY() * currentSpeed * 0.01),minY);
+        double x = Math.max(Math.min(maxX,position.getX()+direction.getX() * currentSpeed * 0.1),minX);
+        double y = Math.max(Math.min(maxY,position.getY()+direction.getY() * currentSpeed * 0.1),minY);
         //position = new Position2D(x,y);
+        if (x == maxX || x == minX || y == maxY || y == minY){
+            direction.setAngle(-direction.getAngle());
+        }
         position.setX(x);
         position.setY(y);
     }

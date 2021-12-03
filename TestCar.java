@@ -1,3 +1,5 @@
+import Movable.Saab95;
+import Movable.Vehicle;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -42,7 +44,7 @@ public class TestCar {
     }
     @Test
     public void testName(){
-        assertEquals("Saab95",car.getModelName());
+        assertEquals("Movable.Saab95",car.getModelName());
     }
     @Test
     public void testVector(){

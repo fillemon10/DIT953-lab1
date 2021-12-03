@@ -1,6 +1,5 @@
+import Movable.*;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 public class TestWorkshop {
     static Workshop<Vehicle> workshop = new Workshop<>(6,"vehicleWorkshop");
@@ -12,7 +11,7 @@ public class TestWorkshop {
     public void TestLoad(){
     workshop.loadCar(new Saab95());
     saab95Workshop.loadCar(new Saab95());
-    //volvo240Workshop.loadCar(new Saab95());
-    //truckWorkshop.loadCar(new Saab95());
+    //volvo240Workshop.loadCar(new Movable.Saab95());
+    //truckWorkshop.loadCar(new Movable.Saab95());
 }
 }

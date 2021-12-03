@@ -1,3 +1,5 @@
+package Movable;
+
 import java.util.List;
 
 public class Workshop<P extends Vehicle> {

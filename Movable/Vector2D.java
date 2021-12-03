@@ -1,3 +1,5 @@
+package Movable;
+
 import static java.lang.Math.PI;
 
 /**
@@ -29,6 +31,10 @@ public class Vector2D {
         angle = newAngle;
         y = Math.sin(newAngle);
         x = Math.cos(newAngle);
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
     }
 
     public double getDistance(Vector2D position){

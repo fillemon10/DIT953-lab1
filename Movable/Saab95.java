@@ -1,3 +1,5 @@
+package Movable;
+
 import java.awt.*;
 
 /**
@@ -11,7 +13,7 @@ public class Saab95 extends Vehicle implements Car {
      * @see Vehicle#Vehicle
      */
     public Saab95(){
-        super(2,125,Color.red,"Saab95");
+        super(2,125,Color.red,"Movable.Saab95");
 	    turboOn = false;
         stopEngine();
     }
@@ -25,7 +27,7 @@ public class Saab95 extends Vehicle implements Car {
     }
 
     /**
-     * @return speedFactor for Saab95
+     * @return speedFactor for Movable.Saab95
      */
     public double speedFactor(){
         double turbo = 1;
