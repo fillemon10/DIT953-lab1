@@ -20,7 +20,7 @@ public class CarView extends JFrame{
     // The controller member
     CarController carC;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    DrawPanel drawPanel;// = new DrawPanel(X, Y-240);
 
     JPanel controlPanel = new JPanel();
 
@@ -42,6 +42,7 @@ public class CarView extends JFrame{
     // Constructor
     public CarView(String framename, CarController cc){
         this.carC = cc;
+        drawPanel = new DrawPanel(X, Y-240, carC.getCars());
         initComponents(framename);
     }
 
@@ -111,6 +112,40 @@ public class CarView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 carC.brake(gasAmount);
+            }
+        });
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.start();
+            }
+        });
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.stop();
+            }
+        });
+        turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.turboOn();
+            }
+        });
+        turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {carC.turboOff(); }
+        });
+        liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.raiseFlatbed();
+            }
+        });
+        lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.lowerFlatbed();
             }
         });
 

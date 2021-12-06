@@ -1,11 +1,11 @@
-import Movable.Car;
-import Movable.Vehicle;
-import Movable.Volvo240;
+import Movable.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -33,7 +33,11 @@ public class CarController {
         // Instance of this class
         CarController cc = new CarController();
 
-        cc.cars.add(new Volvo240());
+        cc.cars.add(new Volvo240(0,0));
+        cc.cars.add(new Saab95(100,0));
+        cc.cars.add(new Scania(200,0));
+
+
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
@@ -51,11 +55,15 @@ public class CarController {
                 car.move(frame.getWidth(),frame.getHeight()-250,0,0);
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
-                frame.drawPanel.moveit(x, y,);
+                frame.drawPanel.moveit(x, y,car.getModelName());
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }
         }
+    }
+
+    public List<Vehicle> getCars(){
+        return cars;
     }
 
     // Calls the gas method for each car once
@@ -71,6 +79,50 @@ public class CarController {
         for (Vehicle car : cars
         ) {
             car.brake(brake);
+        }
+    }
+    void start(){
+        for (Vehicle car : cars
+        ) {
+            car.startEngine();
+        }
+    }
+    void stop(){
+        for (Vehicle car : cars
+        ) {
+            car.stopEngine();
+        }
+    }
+    void turboOn(){
+        for (Vehicle car : cars
+        ) {
+            if (car instanceof Saab95){
+                ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+    void turboOff(){
+        for (Vehicle car : cars
+        ) {
+            if (car instanceof Saab95){
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
+    void raiseFlatbed(){
+        for (Vehicle car : cars
+        ) {
+            if (car instanceof Scania){
+                ((Scania) car).raisePlatform(1);
+            }
+        }
+    }
+    void lowerFlatbed(){
+        for (Vehicle car : cars
+        ) {
+            if (car instanceof Scania){
+                ((Scania) car).raisePlatform(-1);
+            }
         }
     }
 }

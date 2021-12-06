@@ -27,7 +27,7 @@ public class Main extends Application {
     Vehicle car;
     @Override
     public void init() throws Exception {
-        car = new Volvo240();
+        car = new Volvo240(0,0);
         //car = new Movable.Saab95();
     }
 

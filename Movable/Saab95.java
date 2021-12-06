@@ -12,8 +12,8 @@ public class Saab95 extends Vehicle implements Car {
     /**
      * @see Vehicle#Vehicle
      */
-    public Saab95(){
-        super(2,125,Color.red,"Movable.Saab95");
+    public Saab95(int x, int y){
+        super(2,115,Color.red,"Saab95",x,y);
 	    turboOn = false;
         stopEngine();
     }

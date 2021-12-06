@@ -13,8 +13,8 @@ public abstract class Truck extends Vehicle implements Movable  {
      * @param platform
      * @see Vehicle#Vehicle
      */
-    public Truck(int nrDoors, int enginePower, Color color, String modelName, Platform platform) {
-        super(nrDoors, enginePower, color, modelName);
+    public Truck(int nrDoors, int enginePower, Color color, String modelName, Platform platform,int x, int y) {
+        super(nrDoors, enginePower, color, modelName,x,y);
         this.platform = platform;
         stopEngine();
     }
@@ -24,7 +24,7 @@ public abstract class Truck extends Vehicle implements Movable  {
      */
     @Override
     public double speedFactor(){
-        return getEnginePower();
+        return getEnginePower() * 0.01;
     }
 
     /**

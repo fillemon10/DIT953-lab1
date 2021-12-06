@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author A13
  */
 public class TestCar {
-    static Vehicle car = new Saab95();
+    static Vehicle car = new Saab95(0,0);
     @Test
     public void testSpeed() {
         System.out.println(car.getCurrentSpeed());

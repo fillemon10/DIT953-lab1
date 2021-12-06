@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author A13
  */
 public class TestSaab95 {
-    static Saab95 saab95 = new Saab95();
+    static Saab95 saab95 = new Saab95(0,0);
 
     @Test
     public void testTurbo() {

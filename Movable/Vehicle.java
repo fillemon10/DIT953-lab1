@@ -9,7 +9,7 @@ import static java.lang.Math.PI;
 public abstract class Vehicle implements Movable {
     private static final double turnAngle = PI/6;
 
-    private Vector2D position = new Vector2D(100,100);
+    private Vector2D position;
     private Vector2D direction = new Vector2D();
     //change
     private int nrDoors; // Number of doors on the car
@@ -24,11 +24,12 @@ public abstract class Vehicle implements Movable {
      * @param color
      * @param modelName
      */
-    public Vehicle(int nrDoors, double enginePower, Color color, String modelName) {
+    public Vehicle(int nrDoors, double enginePower, Color color, String modelName,int initialPosX,int initialPosY) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
+        this.position = new Vector2D(initialPosX,initialPosY);
     }
 
     /**

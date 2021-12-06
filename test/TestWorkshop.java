@@ -9,8 +9,8 @@ public class TestWorkshop {
 
 @Test
     public void TestLoad(){
-    workshop.loadCar(new Saab95());
-    saab95Workshop.loadCar(new Saab95());
+    workshop.loadCar(new Saab95(0,0));
+    saab95Workshop.loadCar(new Saab95(0,0));
     //volvo240Workshop.loadCar(new Movable.Saab95());
     //truckWorkshop.loadCar(new Movable.Saab95());
 }

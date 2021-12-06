@@ -12,9 +12,9 @@ public class CarTransport extends Truck implements Movable{
      * @param platform
      * @see Vehicle#Vehicle
      */
-    public CarTransport(Platform platform) {
+    public CarTransport(Platform platform,int x, int y) {
         super(2,200, Color.white, "Movable.Scania",
-                new Platform(0,false));
+                new Platform(0,false),x,y);
     }
 
     @Override
