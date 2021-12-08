@@ -1,5 +1,6 @@
-import Movable.Platform;
-import Movable.Scania;
+package test;
+
+import MovablePackage.Scania;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

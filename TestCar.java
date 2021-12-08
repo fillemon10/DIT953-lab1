@@ -1,5 +1,5 @@
-import Movable.Saab95;
-import Movable.Vehicle;
+import MovablePackage.Saab95;
+import MovablePackage.Vehicle;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;

@@ -1,21 +1,16 @@
-package Movable;
+package MovablePackage;
 
 import java.awt.*;
 
 /**
  * @author A13
  */
-public abstract class Truck extends Vehicle implements Movable  {
+public abstract class Truck extends Vehicle  {
 
-    private Platform platform;
+    private Platform platform = new Platform();
 
-    /**
-     * @param platform
-     * @see Vehicle#Vehicle
-     */
-    public Truck(int nrDoors, int enginePower, Color color, String modelName, Platform platform,int x, int y) {
+    public Truck(int nrDoors, int enginePower, Color color, String modelName,int x, int y) {
         super(nrDoors, enginePower, color, modelName,x,y);
-        this.platform = platform;
         stopEngine();
     }
 
@@ -42,6 +37,14 @@ public abstract class Truck extends Vehicle implements Movable  {
      */
     public Platform getPlatform(){
         return platform;
+    }
+
+    public void changePlatformState(){
+        platform.changPlatformState();
+    }
+
+    public boolean isPlatformRaised(){
+        return platform.isRaised();
     }
 
     /**

@@ -1,21 +1,13 @@
-package Movable;
+package MovablePackage;
 
 /**
  * @author A13
  */
 public class Platform {
-    private int angle;
-    private boolean platformIsUp;
+    private int angle = 0;
+    private boolean platformIsUp = false;
 
-    /**
-     * @param angle
-     * @param platformIsUp
-     */
-    public Platform(int angle, boolean platformIsUp){
-        angle = Math.min(70,angle);
-        angle = Math.max(angle, 0);
-        this.angle = angle;
-        this.platformIsUp = platformIsUp;
+    public Platform() {
     }
 
     /**
@@ -31,7 +23,7 @@ public class Platform {
         }
     }
 
-    public void changPlatformstate(){
+    public void changPlatformState(){
         platformIsUp = !platformIsUp;
     }
 

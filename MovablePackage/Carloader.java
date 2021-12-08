@@ -1,4 +1,4 @@
-package Movable;
+package MovablePackage;
 
 import java.util.List;
 

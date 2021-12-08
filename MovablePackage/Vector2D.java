@@ -1,4 +1,4 @@
-package Movable;
+package MovablePackage;
 
 import static java.lang.Math.PI;
 

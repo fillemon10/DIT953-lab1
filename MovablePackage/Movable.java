@@ -1,4 +1,4 @@
-package Movable;
+package MovablePackage;
 
 /**
  * @author A13

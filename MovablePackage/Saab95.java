@@ -1,4 +1,4 @@
-package Movable;
+package MovablePackage;
 
 import java.awt.*;
 
@@ -10,7 +10,7 @@ public class Saab95 extends Vehicle implements Car {
     public boolean turboOn;
 
     /**
-     * @see Vehicle#Vehicle
+     *
      */
     public Saab95(int x, int y){
         super(2,115,Color.red,"Saab95",x,y);
