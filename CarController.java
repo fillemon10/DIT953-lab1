@@ -102,7 +102,7 @@ public class CarController {
         for (Vehicle car : model.getVehicles()
         ) {
             if (car instanceof Scania){
-                ((Scania) car).raisePlatform(1);
+                ((Scania) car).raisePlatform();
             }
         }
     }
@@ -110,7 +110,7 @@ public class CarController {
         for (Vehicle car : model.getVehicles()
         ) {
             if (car instanceof Scania){
-                ((Scania) car).raisePlatform(-1);
+                ((Scania) car).lowerPlatform();
             }
         }
     }

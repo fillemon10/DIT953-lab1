@@ -7,10 +7,11 @@ import java.awt.*;
  */
 public abstract class Truck extends Vehicle  {
 
-    private Platform platform = new Platform();
+    private Platform platform;
 
-    public Truck(int nrDoors, int enginePower, Color color, String modelName,int x, int y) {
+    public Truck(int nrDoors, int enginePower, Color color, String modelName,int x, int y, IPlatformLogic platformLogic) {
         super(nrDoors, enginePower, color, modelName,x,y);
+        platform = new Platform(platformLogic);
         stopEngine();
     }
 
@@ -47,11 +48,14 @@ public abstract class Truck extends Vehicle  {
         return platform.isRaised();
     }
 
-    /**
-     * @param amount
-     */
-    public void raisePlatform(int amount){
+
+    public void raisePlatform(){
         if (getCurrentSpeed() == 0)
-            platform.changeAngle(amount);
+            platform.raisePlatform();
+    }
+    public void lowerPlatform(){
+        if (getCurrentSpeed() == 0){
+            platform.lowerPlatform();
+        }
     }
 }

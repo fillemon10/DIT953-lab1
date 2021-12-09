@@ -10,7 +10,8 @@ public class CarTransport extends Truck {
 
 
     public CarTransport(int x, int y) {
-        super(2,200, Color.white, "CarTransport",x,y);
+        super(2,200, Color.white,
+                "CarTransport",x,y,new BinaryPlatformStrategy());
     }
 
     @Override

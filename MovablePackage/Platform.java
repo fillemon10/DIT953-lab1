@@ -6,21 +6,20 @@ package MovablePackage;
 public class Platform {
     private int angle = 0;
     private boolean platformIsUp = false;
+    private IPlatformLogic platformLogic;
 
-    public Platform() {
+    public Platform(IPlatformLogic platformLogic) {
+        this.platformLogic = platformLogic;
     }
 
     /**
      * @param inAngle
      */
-    public void changeAngle(int inAngle){
-        angle = Math.min(Math.max(angle + inAngle, 0), 70);
-        if (angle == 0){
-            platformIsUp = false;
-        }
-        else {
-            platformIsUp = true;
-        }
+    public void raisePlatform(){
+        platformIsUp = platformLogic.raisePlatform(angle,platformIsUp);
+    }
+    public void lowerPlatform(){
+        platformIsUp = platformLogic.lowerPlatform(angle,platformIsUp);
     }
 
     public void changPlatformState(){
