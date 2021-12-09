@@ -2,9 +2,9 @@ package MovablePackage;
 
 public class AnglePlatformStrategy implements IPlatformLogic {
     @Override
-    public boolean raisePlatform(double angle, boolean platformIsUp) {
-        angle = Math.min(angle + 1, 70);
-        if (angle == 0) {
+    public boolean raisePlatform(boolean platformIsUp,Platform platform) {
+        platform.setAngle(Math.min(platform.getAngle() + 1, 70));
+        if (platform.getAngle()  == 0) {
             return false;
         } else {
             return true;
@@ -12,9 +12,9 @@ public class AnglePlatformStrategy implements IPlatformLogic {
     }
 
     @Override
-    public boolean lowerPlatform(double angle, boolean platformIsUp) {
-        angle = Math.min(angle + -1, 70);
-        if (angle == 0) {
+    public boolean lowerPlatform(boolean platformIsUp,Platform platform) {
+        platform.setAngle(Math.max(platform.getAngle() - 1, 0));
+        if (platform.getAngle() == 0) {
             return false;
         } else {
             return true;

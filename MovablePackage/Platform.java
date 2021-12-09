@@ -16,14 +16,10 @@ public class Platform {
      * @param inAngle
      */
     public void raisePlatform(){
-        platformIsUp = platformLogic.raisePlatform(angle,platformIsUp);
+        platformIsUp = platformLogic.raisePlatform(platformIsUp,this);
     }
     public void lowerPlatform(){
-        platformIsUp = platformLogic.lowerPlatform(angle,platformIsUp);
-    }
-
-    public void changPlatformState(){
-        platformIsUp = !platformIsUp;
+        platformIsUp = platformLogic.lowerPlatform(platformIsUp,this);
     }
 
     /**
@@ -32,11 +28,6 @@ public class Platform {
     public boolean isRaised() {
         return platformIsUp;
     }
-
-    /**
-     * @return angle
-     */
-    public int getAngle(){
-        return angle;
-    }
+    public int getAngle(){return angle;}
+    public void setAngle(int inAngle){angle = inAngle;}
 }

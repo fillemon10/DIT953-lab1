@@ -40,10 +40,6 @@ public abstract class Truck extends Vehicle  {
         return platform;
     }
 
-    public void changePlatformState(){
-        platform.changPlatformState();
-    }
-
     public boolean isPlatformRaised(){
         return platform.isRaised();
     }

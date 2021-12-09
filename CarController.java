@@ -103,6 +103,7 @@ public class CarController {
         ) {
             if (car instanceof Scania){
                 ((Scania) car).raisePlatform();
+                System.out.println("Scania platform is: " + ((Scania) car).getPlatform().isRaised() + " with angle: "+ ((Scania) car).getPlatform().getAngle());
             }
         }
     }
@@ -111,6 +112,7 @@ public class CarController {
         ) {
             if (car instanceof Scania){
                 ((Scania) car).lowerPlatform();
+                System.out.println("Scania platform is: " + ((Scania) car).getPlatform().isRaised() + " with angle: "+ ((Scania) car).getPlatform().getAngle());
             }
         }
     }

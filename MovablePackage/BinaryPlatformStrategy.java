@@ -2,12 +2,12 @@ package MovablePackage;
 
 public class BinaryPlatformStrategy implements IPlatformLogic{
     @Override
-    public boolean raisePlatform(double angle, boolean platformIsUp) {
+    public boolean raisePlatform(boolean platformIsUp, Platform platform) {
         return true;
     }
 
     @Override
-    public boolean lowerPlatform(double angle, boolean platformIsUp) {
+    public boolean lowerPlatform(boolean platformIsUp, Platform platform) {
         return false;
     }
 }
